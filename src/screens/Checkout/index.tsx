@@ -1,5 +1,3 @@
-// src/screens/Checkout/index.tsx
-
 import React from 'react';
 import {
   View,

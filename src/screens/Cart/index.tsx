@@ -1,5 +1,3 @@
-// src/screens/Cart/index.tsx
-
 import React from 'react';
 import {
   View,

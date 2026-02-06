@@ -1,5 +1,3 @@
-// src/screens/Home/index.tsx
-
 import React, { useState, useRef } from 'react';
 import {
   View,

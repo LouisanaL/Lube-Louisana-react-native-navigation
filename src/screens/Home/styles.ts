@@ -1,9 +1,7 @@
-// src/screens/Home/styles.ts
-
 import { StyleSheet, Dimensions } from 'react-native';
 
 const { width } = Dimensions.get('window');
-const cardWidth = (width - 48) / 2; // 2 columns with padding
+const cardWidth = (width - 48) / 2; 
 
 export const createStyles = (colors: any) =>
   StyleSheet.create({

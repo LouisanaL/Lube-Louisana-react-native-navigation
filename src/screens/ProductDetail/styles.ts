@@ -1,5 +1,3 @@
-// src/screens/ProductDetail/styles.ts
-
 import { StyleSheet } from 'react-native';
 
 export const createStyles = (colors: any) =>
