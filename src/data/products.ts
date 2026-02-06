@@ -1,0 +1,86 @@
+// src/data/products.ts
+
+import { Product } from '../types';
+
+export const products: Product[] = [
+  {
+    id: '1',
+    name: 'Special Ensaymada',
+    price: 30,
+    image: '',
+    imageUrl: require('../../assets/special_ensaymada.jpg'),
+    description: 'A delightful Filipino pastry with a golden, buttery exterior and a soft, pillowy interior. Perfect for breakfast or as a sweet treat.',
+  },
+  {
+    id: '2',
+    name: 'Ube Ensaymada',
+    price: 40,
+    image: '',
+    imageUrl: require('../../assets/Ube_Ensay.jpg'),
+    description: 'Indulge in the rich purple flavor of ube in this special ensaymada. A unique Filipino twist on a classic pastry.',
+  },
+  {
+    id: '3',
+    name: 'Chocolate Chip Cookies',
+    price: 30,
+    image: '',
+    imageUrl: require('../../assets/Choco_Chip.jpg'),
+    description: 'Classic chocolate chip cookies with premium Belgian chocolate. Crispy on the outside, chewy on the inside.',
+  },
+  {
+    id: '4',
+    name: 'Matcha Cookies',
+    price: 35,
+    image: '',
+    imageUrl: require('../../assets/Matcha.jpg'),
+    description: 'Authentic Japanese matcha green tea cookies. A perfect blend of earthy flavor with a delicate sweetness.',
+  },
+  {
+    id: '5',
+    name: 'Red Velvet Cookies',
+    price: 35,
+    image: '',
+    imageUrl: require('../../assets/Red_Velvet.jpg'),
+    description: 'Elegant red velvet cookies with a hint of cocoa and cream cheese undertones. Perfect for special occasions.',
+  },
+  {
+    id: '6',
+    name: 'Chocolate Muffins',
+    price: 35,
+    image: '',
+    imageUrl: require('../../assets/Muffin.jpg'),
+    description: 'Rich and moist chocolate muffins made with quality cocoa powder and dark chocolate chunks.',
+  },
+  {
+    id: '7',
+    name: 'Crinkles',
+    price: 25,
+    image: '',
+    imageUrl: require('../../assets/Choco_Crinkles.jpg'),
+    description: 'Soft and fudgy chocolate cookies with a distinctive crinkled appearance. A beloved Filipino favorite.',
+  },
+  {
+    id: '8',
+    name: 'Small Basque Cheesecake',
+    price: 250,
+    image: '',
+    imageUrl: require('../../assets/Basque_Cheesecake.jpg'),
+    description: 'Rustic-style Basque cheesecake with a caramelized top and creamy center. Minimalist perfection.',
+  },
+  {
+    id: '9',
+    name: 'Cheese Bar',
+    price: 20,
+    image: '',
+    imageUrl: require('../../assets/Cheese_Bars.jpg'),
+    description: 'Delicious cheese-filled bar cookies with a buttery crust and creamy cheese layer. Great value for money.',
+  },
+  {
+    id: '10',
+    name: 'Brownies',
+    price: 20,
+    image: '',
+    imageUrl: require('../../assets/brownies.jpeg'),
+    description: 'Fudgy, decadent brownies made with pure chocolate. Dense texture with a melt-in-your-mouth quality.',
+  },
+];

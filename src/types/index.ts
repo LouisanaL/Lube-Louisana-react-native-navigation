@@ -1,9 +1,12 @@
+// src/types/index.ts
+
 export interface Product {
   id: string;
   name: string;
   price: number;
   image: string;
-  imageUrl?: string; // Optional URL for actual product images
+  imageUrl?: any;
+  description?: string;
 }
 
 export interface CartItem extends Product {
@@ -37,6 +40,7 @@ export interface ThemeContextType {
 
 export type RootStackParamList = {
   Home: undefined;
+  ProductDetail: { productId: string };
   Cart: undefined;
   Checkout: undefined;
 };
