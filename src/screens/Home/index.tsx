@@ -1,3 +1,5 @@
+// src/screens/Home/index.tsx
+
 import React, { useState, useRef } from 'react';
 import {
   View,
@@ -29,8 +31,7 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
   const { colors, isDarkMode, toggleTheme } = useTheme();
   const styles = createStyles(colors);
   
-  const [addedProductId, setAddedProductId] = useState<string | null>(null);
-  const fadeAnim = useRef(new Animated.Value(0)).current;
+  const slideAnim = useRef(new Animated.Value(100)).current;
 
   const totalItemsInCart = cartItems.reduce(
     (sum, item) => sum + item.quantity,
@@ -40,23 +41,16 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
   const handleAddToCart = (product: any) => {
     addToCart(product);
     
-    setAddedProductId(product.id);
-    
-    Animated.sequence([
-      Animated.timing(fadeAnim, {
-        toValue: 1,
-        duration: 300,
-        useNativeDriver: true,
-      }),
-      Animated.delay(1500),
-      Animated.timing(fadeAnim, {
-        toValue: 0,
-        duration: 300,
-        useNativeDriver: true,
-      }),
-    ]).start(() => {
-      setAddedProductId(null);
-    });
+    // Slide up the View Cart button
+    Animated.timing(slideAnim, {
+      toValue: 0,
+      duration: 300,
+      useNativeDriver: true,
+    }).start();
+  };
+
+  const handleViewCart = () => {
+    navigation.navigate('Cart');
   };
 
   return (
@@ -134,22 +128,36 @@ const HomeScreen: React.FC<Props> = ({ navigation }) => {
                 <Text style={styles.productPrice}>₱{product.price}</Text>
                 
                 <TouchableOpacity
-                  style={[
-                    styles.addButton,
-                    addedProductId === product.id && styles.addButtonAdded,
-                  ]}
+                  style={styles.addButton}
                   onPress={() => handleAddToCart(product)}
                   activeOpacity={0.7}
                 >
-                  <Text style={styles.addButtonText}>
-                    {addedProductId === product.id ? 'Added!' : 'Add to Cart'}
-                  </Text>
+                  <Text style={styles.addButtonText}>Add to Cart</Text>
                 </TouchableOpacity>
               </View>
             </TouchableOpacity>
           ))}
         </View>
       </ScrollView>
+
+      {totalItemsInCart > 0 && (
+        <Animated.View
+          style={[
+            styles.viewCartContainer,
+            {
+              transform: [{ translateY: slideAnim }],
+            },
+          ]}
+        >
+          <TouchableOpacity
+            style={styles.viewCartButton}
+            onPress={handleViewCart}
+            activeOpacity={0.7}
+          >
+            <Text style={styles.viewCartButtonText}> View Cart ({totalItemsInCart})</Text>
+          </TouchableOpacity>
+        </Animated.View>
+      )}
     </SafeAreaView>
   );
 };
